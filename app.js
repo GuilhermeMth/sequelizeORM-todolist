@@ -1,3 +1,4 @@
+require('dotenv').config({path: '${process.cwd()}/.env'});
 const express = require('express');
 const app = express();
 
@@ -11,6 +12,8 @@ app.get('/', (req, res) => {
     })
 });
 
-app.listen(3000, () => {
-    console.log("API is running on port 3000");
+const PORT = process.env.APP_PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log("Server running at", PORT);
 });
