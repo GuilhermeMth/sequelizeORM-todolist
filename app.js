@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+const todoRoutes = require('./routes/todoRoutes');
+app.use('/todo', todoRoutes);
+
 app.get('/', (req, res) => {
     res.status(200).json({
         status: "success",
