@@ -1,4 +1,4 @@
-require('dotenv').config({path: '${process.cwd()}/.env'});
+require('dotenv').config({path: `${process.cwd()}/.env`});
 const express = require('express');
 const app = express();
 
