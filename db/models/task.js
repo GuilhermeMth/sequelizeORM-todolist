@@ -1,42 +1,36 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
-const sequelize = require("../../config/database")
+const { DataTypes, Model } = require('sequelize');
+const sequelize = require("../../config/database");
 
-module.exports = sequelize.define('Tasks', {
+module.exports = sequelize.define('task', {
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: Sequelize.INTEGER
+    type: DataTypes.INTEGER 
   },
   title: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   status: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   priority: {
-    type: Sequelize.INTEGER
+    type: DataTypes.INTEGER
   },
   description: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   createdAt: {
     allowNull: false,
-    type: Sequelize.DATE
+    type: DataTypes.DATE
   },
   updatedAt: {
     allowNull: false,
-    type: Sequelize.DATE
+    type: DataTypes.DATE
   },
-  deletedAt: {
-    type: Sequelize.DATE
-  }, 
 }, {
-    parsanoid: true,
-    frezzeTableName: true,
-    modelName: 'Tasks',
-   }
-);
+    paranoid: true, 
+    freezeTableName: true, 
+    modelName: 'task',
+});
