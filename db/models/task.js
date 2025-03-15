@@ -30,7 +30,7 @@ module.exports = sequelize.define('task', {
     type: DataTypes.DATE
   },
 }, {
-    paranoid: true, 
+    paranoid: false, 
     freezeTableName: true, 
     modelName: 'task',
 });
