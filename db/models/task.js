@@ -32,7 +32,11 @@ module.exports = sequelize.define('Tasks', {
     type: Sequelize.DATE
   },
   deletedAt: {
-    allowNull: true,
     type: Sequelize.DATE
-  }
-});
+  }, 
+}, {
+    parsanoid: true,
+    frezzeTableName: true,
+    modelName: 'Tasks',
+   }
+);
